@@ -1,0 +1,30 @@
+.container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.form {
+  display: inline-flex;
+  gap: 10px;
+}
+.input {
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  background-color: #34b7db;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #4be8c6;
+}
+.p {
+  font: 1.5em sans-serif;
+  font-style: italic;
+  color: rgb(22, 40, 40);
+}

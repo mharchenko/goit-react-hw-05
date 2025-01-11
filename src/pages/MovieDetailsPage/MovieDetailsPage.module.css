@@ -1,0 +1,36 @@
+.container {
+  padding: 2rem;
+}
+
+.button {
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #61dafb;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #21a1f1;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: #61dafb;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
