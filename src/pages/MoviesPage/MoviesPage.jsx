@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+// import { useLocation, useNavigate } from 'react-router-dom';
 import MovieList from '../../components/MovieList/MovieList';
 import { searchMovies } from '../../services/api';
 import styles from './MoviesPage.module.css';
+import { useSearchParams } from 'react-router-dom';
 
 const MoviesPage = () => {
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
-  const location = useLocation();
-  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
+  // const location = useLocation();
+  // const navigate = useNavigate();
 
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const queryParam = params.get('query');
+    // const params = new URLSearchParams(location.search);
+    const queryParam = searchParams.get('query');
 
     if (queryParam) {
       setQuery(queryParam);
       searchMovies(queryParam).then((data) => setMovies(data.results));
     }
-  }, [location.search]);
+  }, [searchParams]);
 
   const handleInputChange = (e) => {
     setQuery(e.target.value);
@@ -27,7 +29,7 @@ const MoviesPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (query.trim()) {
-      navigate(`/movies?query=${query}`);
+      setSearchParams({ query });
     }
   };
 
